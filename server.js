@@ -20,8 +20,7 @@ app.listen(5544,()=>{
 app.use(express.static(path.join(__dirname,'./Client/build')));
 
 app.get('*',(req,res)=>{
-    res.sendFile('./Client/build/index.html');
-});
+    res.sendFile('./Client/build/index.html')});
 //---------------------------------------
 
 let store=multer.diskStorage({
