@@ -30,7 +30,7 @@ function EditProfile() {
         idRef.current.value=storeObj.employeesLoginData.id;
         emailRef.current.value=storeObj.employeesLoginData.email;
         passwordRef.current.value=storeObj.employeesLoginData.password;
-        setImgPath(`http://localhost:5544/${storeObj.employeesLoginData.profilePic}`)
+        setImgPath(`/${storeObj.employeesLoginData.profilePic}`)
     }
 
     let updateEmployeeDetails=async()=>{

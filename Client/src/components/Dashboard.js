@@ -24,7 +24,7 @@ function Dashboard() {
         <Topnavigation/>
         <h1>Dashboard</h1>
         <h3>Welcome {storeObj.employeesLoginData.name}</h3>
-        <img src={`http://localhost:5544/${storeObj.employeesLoginData.profilePic}`}></img>
+        <img src={`/${storeObj.employeesLoginData.profilePic}`}></img>
         <button type='button' onClick={()=>{
           deleteEmployeesProfile();
         }}>Delete Account</button>
