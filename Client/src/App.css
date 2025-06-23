@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+form{
+  border: 2px solid black;
+  display: inline-block;
+  background-color: cornflowerblue;
+}
+
+form label{
+  display: inline-block;
+  width: 100px;
+  /* margin: 10px; */
+
+}
+form div{
+  margin: 10px;
+}
+
+img{
+  width: 100px;
+}
+
+nav{
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-evenly;
+}
