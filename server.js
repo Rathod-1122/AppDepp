@@ -6,6 +6,7 @@ const multer=require('multer')
 const dotenv=require('dotenv')
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
+const path=require('node:path')
 dotenv.config();
 
 const app=express();
@@ -15,13 +16,13 @@ app.listen(5544,()=>{
     console.log('server is running on port:5544');
 })
 
+//-------------------------------extra for deployment------------
+app.use(express.static(path.join(__dirname,'./Client/build')));
 
-// let authorize=(req,res,next)=>{
-//     console.log('authorize:')
-//     console.log(req.headers.authorization);
-//     next();
-// };
-// app.use(authorize);
+app.get('*',()=>{
+    res.sendFile('./Client/build/index.html');
+});
+//---------------------------------------
 
 let store=multer.diskStorage({
     destination:function(req,file,cb){
