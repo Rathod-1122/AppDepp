@@ -13,7 +13,7 @@ function Login() {
   let dispatchObj=useDispatch();
   let navigateObj=useNavigate();
 
-  // axios.defaults.baseURL='http://localhost:5544';
+  axios.defaults.baseURL='';
   //it simplifies the task of 
   useEffect(()=>{
     if(localStorage.getItem('token')){
