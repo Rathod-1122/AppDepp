@@ -19,7 +19,7 @@ app.listen(5544,()=>{
 //-------------------------------extra for deployment------------
 app.use(express.static(path.join(__dirname,'./Client/build')));
 
-app.get('*',()=>{
+app.get('*',(req,res)=>{
     res.sendFile('./Client/build/index.html');
 });
 //---------------------------------------
