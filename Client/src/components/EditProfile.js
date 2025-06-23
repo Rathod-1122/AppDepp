@@ -30,7 +30,7 @@ function EditProfile() {
         idRef.current.value=storeObj.employeesLoginData.id;
         emailRef.current.value=storeObj.employeesLoginData.email;
         passwordRef.current.value=storeObj.employeesLoginData.password;
-        setImgPath(`/${storeObj.employeesLoginData.profilePic}`)
+        setImgPath(` /${storeObj.employeesLoginData.profilePic}`)
     }
 
     let updateEmployeeDetails=async()=>{
@@ -45,7 +45,7 @@ function EditProfile() {
 
         // let requestOptions={method:'PUT',body:dataToSend}
 
-        let response= await axios.put('/updateEmployeeProfile',dataToSend);
+        let response= await axios.put(' /updateEmployeeProfile',dataToSend);
 
         // let jsData= await jsonData.json();
 

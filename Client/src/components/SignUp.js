@@ -23,7 +23,7 @@ function SignUp() {
         dataToSend.append('password',passwordRef.current.value);
         dataToSend.append('profilePic',profilePicRef.current.files[0]);
 
-        let response= await axios.post('/insertingDataToDB',dataToSend)
+        let response= await axios.post(' /insertingDataToDB',dataToSend)
         console.log('response from the server :',response)
         alert(response.data.message)
     }
