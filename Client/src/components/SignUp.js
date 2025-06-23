@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function SignUp() {
 
-    axios.defaults.baseURL='';
+    // axios.defaults.baseURL='';
     let nameRef=useRef();
     let ageRef=useRef();
     let idRef=useRef();
@@ -23,7 +23,7 @@ function SignUp() {
         dataToSend.append('password',passwordRef.current.value);
         dataToSend.append('profilePic',profilePicRef.current.files[0]);
 
-        let response= await axios.post(' /insertingDataToDB',dataToSend)
+        let response= await axios.post('/insertingDataToDB',dataToSend)
         console.log('response from the server :',response)
         alert(response.data.message)
     }

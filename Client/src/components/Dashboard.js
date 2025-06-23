@@ -4,7 +4,7 @@ import Topnavigation from './Topnavigation';
 import axios from 'axios';
 function Dashboard() {
 
-    axios.defaults.baseURL='';
+    // axios.defaults.baseURL='';
 
     let storeObj=useSelector((store)=>{
         return store.loginReducer;
@@ -13,7 +13,7 @@ function Dashboard() {
 
     let deleteEmployeesProfile= async()=>{
 
-        let response= await axios.delete(` /deleteEmployeesProfile?email=${storeObj.employeesLoginData.email}`);
+        let response= await axios.delete(`/deleteEmployeesProfile?email=${storeObj.employeesLoginData.email}`);
         alert(response.data.message)
         // let requestOptions={method:"DELETE"};
         // let jsData= await jsonData.json();

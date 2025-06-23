@@ -13,7 +13,7 @@ function Login() {
   let dispatchObj=useDispatch();
   let navigateObj=useNavigate();
 
-  axios.defaults.baseURL='';
+  // axios.defaults.baseURL='';
   //it simplifies the task of 
   useEffect(()=>{
     if(localStorage.getItem('token')){
@@ -26,7 +26,7 @@ function Login() {
     let dataToValidate=new FormData();
     dataToValidate.append('token',localStorage.getItem('token'));
 
-    let response=await axios.post(' /validateTokenForAutologin',dataToValidate);
+    let response=await axios.post('/validateTokenForAutologin',dataToValidate);
     console.log('response recieved from the server due to autologin is:',response);
     alert(response.data.message)
     if(response.data.status=='success'){
