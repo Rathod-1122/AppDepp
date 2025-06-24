@@ -16,10 +16,12 @@ app.listen(5544,()=>{
     console.log('server is running on port:5544');
 })
 
-//-------------------------------extra for deployment------------
+//------------Code for deployment------------
 app.use(express.static(path.join(__dirname,"./Client/build")));
 
-
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./Client/build/index.html"));
+});
 //---------------------------------------
 
 let store=multer.diskStorage({
@@ -133,13 +135,11 @@ app.post('/validateTokenForAutologin',upload.none(),async(req,res)=>{
 
 app.put('/updateEmployeeProfile',upload.single('profilePic'),async(req,res)=>{
 
-    // console.log('req.body',req.body)
-
     try{
         if(req.body.name.trim().length>0)
         {
             let updatedName= await employees.updateMany({email:req.body.email},{name:req.body.name})
-            console.log('the updated name details:',updatedName)
+            // console.log('the updated name details:',updatedName)
         }
         if(req.body.age>0 && req.body.age<100)
         {
@@ -179,13 +179,12 @@ app.delete('/deleteEmployeesProfile',async(req,res)=>{
             res.json({status:'Deletion failed',message:'Unable to delete the employee'})
         }
     }catch(err){
-        res.json({message:'Error occured while deleting the employee'})
-
+        res.json({message:'Error occured while deleting the employee'});
     }
     
 })
 
-//---------------------------- Data Base Part --------------------------
+//--------  Data Base Part -------------
 
 let connectingServerToDataBase=async()=>{
     try{
@@ -213,6 +212,3 @@ let employees=new mongoose.model('employees',employeesSchema,'EmployeesProfile')
 
 
 
-app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"./Client/build/index.html"));
-});

@@ -4,7 +4,6 @@ import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 
-
 function Login() {
 
   let emailRef=useRef();
@@ -31,7 +30,7 @@ function Login() {
     alert(response.data.message)
     if(response.data.status=='success'){
      dispatchObj({type:'employeesLogData',data:response.data.data});
-      navigateObj('Dashboard')
+      // navigateObj('Dashboard')
     }
   }
 
@@ -46,7 +45,7 @@ function Login() {
       dataToSend.append('password',passwordRef.current.value)
 
       let response= await axios.post('/login',dataToSend)
-      //the response will be an axios response ,inside to it in data key server response will be there
+      //the response will be an axios response ,inside to it in data key ,server response will be there
       console.log('the responce recieved from the server due to manual login:',response)
       if(response.data.status=='success'){
         alert(response.data.message)

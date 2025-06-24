@@ -15,8 +15,6 @@ function Dashboard() {
 
         let response= await axios.delete(`/deleteEmployeesProfile?email=${storeObj.employeesLoginData.email}`);
         alert(response.data.message)
-        // let requestOptions={method:"DELETE"};
-        // let jsData= await jsonData.json();
         
     }
   return (

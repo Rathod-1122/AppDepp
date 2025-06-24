@@ -61,8 +61,6 @@ function SignUp() {
                 <label>Profile Pic</label>
                 <input type='file' ref={profilePicRef} multiple onChange={()=>{
                     console.log('details of files:',profilePicRef.current.files)
-                    //profilePicRef.current.files -it returns a Filelist object which is containing list of Fileobjects all the files and their details
-                    //profilePicRef.current.files[0]-it will return a File object of the 1st file ,it containing the details such as name,size,type etc
                     let newImg=URL.createObjectURL(profilePicRef.current.files[0])
                     setImgPath(newImg)
                 }}></input>
