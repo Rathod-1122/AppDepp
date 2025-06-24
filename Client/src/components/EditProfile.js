@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Topnavigation from './Topnavigation';
 import axios from 'axios';
 
-// axios.defaults.baseURL='';
+axios.defaults.baseURL='http://localhost:5544';
 
 function EditProfile() {
 

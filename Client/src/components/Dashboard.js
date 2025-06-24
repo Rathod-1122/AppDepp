@@ -4,7 +4,7 @@ import Topnavigation from './Topnavigation';
 import axios from 'axios';
 function Dashboard() {
 
-    // axios.defaults.baseURL='';
+    axios.defaults.baseURL='http://localhost:5544';
 
     let storeObj=useSelector((store)=>{
         return store.loginReducer;

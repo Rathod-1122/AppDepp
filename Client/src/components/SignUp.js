@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function SignUp() {
 
-    // axios.defaults.baseURL='';
+    axios.defaults.baseURL='http://localhost:5544';
     let nameRef=useRef();
     let ageRef=useRef();
     let idRef=useRef();
