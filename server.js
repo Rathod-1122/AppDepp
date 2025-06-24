@@ -19,9 +19,7 @@ app.listen(5544,()=>{
 //-------------------------------extra for deployment------------
 app.use(express.static(path.join(__dirname,"./Client/build")));
 
-app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"./Client/build/index.html"));
-});
+
 //---------------------------------------
 
 let store=multer.diskStorage({
@@ -211,3 +209,10 @@ let employeesSchema=new mongoose.Schema({
 })
 
 let employees=new mongoose.model('employees',employeesSchema,'EmployeesProfile');
+
+
+
+
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./Client/build/index.html"));
+});
