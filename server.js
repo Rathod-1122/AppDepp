@@ -80,7 +80,7 @@ app.post('/login',upload.none(),async(req,res)=>{
             {
                 let token=jwt.sign({email:matchedData[i].email,password:matchedData[i].password},'hi');
                 console.log('password is matched')
-                res.json({status:'success',message:'user login successfull',encryptedData:token,data:matchedData[i]})
+                return res.json({status:'success',message:'user login successfull',encryptedData:token,data:matchedData[i]});
             }
             if(i==matchedData.length-1){
                 res.json({message:'enter the valid password'})
@@ -120,7 +120,7 @@ app.post('/validateTokenForAutologin',upload.none(),async(req,res)=>{
                     profilePic:dataFoundAfterDecrypt[i].profilePic
                 }
 
-                res.json({status:'success',message:'autologin successfull',data:dataToSend});
+                return res.json({status:'success',message:'autologin successfull',data:dataToSend});
             }
             if(i==dataFoundAfterDecrypt.length-1)
             {
